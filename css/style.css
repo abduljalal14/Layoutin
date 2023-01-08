@@ -1,0 +1,290 @@
+        /* @font-face {
+           
+            font-family: 'Avenir'; 
+            src: url('font/Avenir-Black.otf'); 
+        }
+         */
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Avenir';
+        }
+        /* header styling */
+       .header {
+           display: flex;
+           position: relative;
+           background-color: white;
+           height: 80px;
+           box-shadow: 0 5px 15px 1px rgb(148, 148, 148);
+       }
+       .header>img{
+           width: 108px;
+           height: 56px;
+           margin: auto 0;
+           margin-left: 110px;
+       }
+       .header>h1{
+           font-family: "Avenir";
+           margin: auto 0;
+           margin-left: 45px;
+       }
+       /* content styling */
+       .content{
+           height: 680px;
+           width: 100%;
+           display: flex;
+           background: rgb(255, 255, 255);
+       }
+       .content > div{
+           background: yellow;
+           width: 100px;
+           height: 500px;
+       }
+       .content > div>h2{
+            font-family: 'Avenir';
+            margin-left: 15px;
+       }
+        /* menu styling */
+       #menu {
+           background-color: white;
+           width: 110px;
+           height: 690px;
+           padding: 5px;
+       }
+       #menu >a>div{
+           display: flex;
+           background-color: #FB6202;
+           width: 90px;
+           height: 90px;
+           margin: 0 auto;
+           margin-bottom: 8px;
+           padding: 5px;
+           box-sizing: border-box;
+           border-radius: 9px;
+           box-shadow: 2px 2px 4px 2px gray;
+       }
+       #menu >a>div:hover{
+           background-color: rgb(255, 149, 74);
+       }
+       #menu >a>div>img{
+            width: 50px;
+            height: 68px;
+            margin: 0 auto;
+            margin-top: 10px;
+       }
+       /* input styling */
+       #input {
+           background-color: #0068B4;
+           width: 320px;
+           height: 690px;
+           padding: 5px;
+        }
+       #input>h2 {
+            color: white;
+        }
+        #input >div{
+            width: 276px;
+            height: 590px;
+            background-color: white;
+            margin: 0 auto;
+            border: 3px solid rgb(206, 206, 206);
+            border-radius: 9px;
+        }
+         #input >div>div{
+            margin-left: 15px;
+        }
+        
+        #cal-preview {
+            width: 250px;
+            height: 165px;
+            background-color: #afafaf;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #input >div>div>.inputan, #unduh{
+            font-family: "Avenir";
+            width: 224px;
+            height: 33px;
+            background-color: #E3E5F4;
+            border: none;
+            border-radius: 9px;
+            box-sizing: border-box;
+            padding: 3px;
+            text-align: center;
+        }
+        #input >div>div>input[type="submit"], #unduh{
+            margin-top: 5px;
+            background-image: linear-gradient(rgb(0, 206, 79), rgb(0, 107, 18));
+            color: white;
+            border: solid 3px rgb(0, 58, 26);
+            box-shadow: 2px 2px 2px 2px black;
+            font-family: "Avenir";
+        }
+         #input >div>div>input[type="submit"]:hover, #unduh:hover{
+            background-image: linear-gradient(rgb(0, 233, 89), rgb(0, 139, 23));
+         }
+         #input >div>div>input[type="submit"]:active,#unduh:active{
+            background-image: linear-gradient(rgb(0, 107, 18), rgb(0, 206, 79));
+         }
+        #input >div>div>#dimensi>input{
+            font-family: "Avenir";
+            width: 100px;
+            height: 33px;
+            background-color: #E3E5F4;
+            border: none;
+            box-sizing: border-box;
+            padding: 3px;
+            text-align: center;
+        }
+        #input >div>div>#dimensi>input.nav-button{
+            font-family: "Avenir";
+            width: 100px;
+            height: 33px;
+            background-color: #0068B4;
+            border: none;
+            box-sizing: border-box;
+            padding: 3px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            margin-right: 5px;
+        }
+        #input >div>div>#dimensi>input.nav-button:hover{
+            background-color: #0085e4;
+        }
+        #input >div>div>#dimensi>input.nav-button:active{
+            background-color: #004b81;
+        }
+        #input >div>div>#dimensi>h4{
+            margin: auto 0;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        #input >div>div>#dimensi{
+            display: flex;
+        }
+
+        /* layout styling */
+       #layout {
+           background-color: white;
+           width: 790px;
+           height: 690px;
+       }
+       #layout >div{
+            width: 730px;
+            height: 590px;
+            background-color: #D2D3D5;
+            margin: 0 auto;
+            border: 3px solid rgb(206, 206, 206);
+            border-radius: 9px;
+       }
+       /* Paper A3 */
+       #layout >div>iframe{ 
+           position: relative;
+           display: block;
+           /* width: 371px; */
+           width: 371px;
+           height: 561px;
+           background-color: white;
+           margin: 0 auto;
+           box-sizing: border-box;
+           margin-top: 10px;
+           box-shadow: 2px 2px 0 2px gray;
+       }
+       .image-preview {
+           float: left;
+           width: 100px;
+           margin-left: 20px;
+           margin-top: 20px;
+           margin-bottom: 20px;
+           border-radius: 5px;
+           box-shadow: 2px 2px 0 2px gray;
+       }
+       /* rincian styling */
+       #rincian {
+           background-color: #0068B4;
+           width: 372px;
+           height: 690px;
+           padding: 5px;
+       }
+       #rincian >div{
+           display: flex;
+            width: 332px;
+            height: 500px;
+            background-color: white;
+            margin: 0 auto;
+            border: 3px solid rgb(206, 206, 206);
+            border-radius: 9px;
+        }
+        #rincian>h2 {
+            color: white;
+        }
+        #rincian>div>div{
+            display: block;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #view {
+            color: brown;
+        }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ff0000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ff0000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+

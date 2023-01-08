@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jilidin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/yenpop_logo.png" alt="Logo YenPop">
+        <h1>Jilidin</h1>
+    </div>
+    <div class="content">
+        <div id="menu">
+            <h2>Menu</h2>
+            <a href="index.html">
+                <div id="layoutin">
+                    <img src="img/layotin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="kartuin.html">
+                <div>
+                    <img src="img/kartuin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="kalenderin.html">
+                <div>
+                    <img src="img/kalenderin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            
+            <a href="#">
+                <div  style="background-color: #a74000;">
+                    <img src="img/jilidin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="checkin.html">
+                <div>
+                    <img src="img/checkin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+        </div>
+        <div id="input">
+            <h2>Input</h2>
+            <div>
+                <div>
+                    <h4>Jenis & Ukuran Jilid :</h4>
+                    <select class="inputan" name='jenis_jilid' id="input_jenis" onchange="jenisJilid()">
+                        <option value='n'>--Pilih Jenis & Ukuran Jilid--</option>
+                        <option value='ja3'>Jilid Spiral A3 Horizontal</option>
+                        <option value='ja4'>Jilid Spiral A4 Horizontal</option>
+                        <option value='ja5'>Jilid Spiral A5 Horizontal</option>
+                        <option value='ja6'>Jilid Spiral A6 Horizontal</option>
+                        <option value='ja3b'>Jilid Spiral A3 2 Muka Horizontal</option>
+                        <option value='ja4b'>Jilid Spiral A4 2 Muka Horizontal</option>
+                        <option value='ja5b'>Jilid Spiral A5 2 Muka Horizontal</option>
+                        <option value='ja6b'>Jilid Spiral A6 2 Muka Horizontal</option>
+                        <option value='ja3v'>Jilid Spiral A3 Vertikal</option>
+                        <option value='ja4v'>Jilid Spiral A4 Vertikal</option>
+                        <option value='ja5v'>Jilid Spiral A5 Vertikal</option>
+                        <option value='ja6v'>Jilid Spiral A6 Vertikal</option>
+                        <option value='ja3bv'>Jilid Spiral A3 2 Muka Vertikal</option>
+                        <option value='ja4bv'>Jilid Spiral A4 2 Muka Vertikal</option>
+                        <option value='ja5bv'>Jilid Spiral A5 2 Muka Vertikal</option>
+                        <option value='ja6bv'>Jilid Spiral A6 2 Muka Vertikal</option>
+                    </select>
+                    <h4>Input Gambar (JPEG/PNG) :</h4>
+                    <input onchange="readURL(this)" class="inputan" type="file" id="file-to-upload" accept="image/jpeg, image/png, image/jpg"
+                        multiple />
+                    <div id="dimensi" style="margin-top: 10px; margin-bottom: 10px;">
+                        <h4>Warna Garis Potong :</h4>
+                        <label class="switch">
+                            <input type="checkbox" id="checkgp" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <input class="inputan" type="submit" value="PROSES" onclick="prosesData()">
+                </div>
+            </div>
+        </div>
+        <div id="layout">
+            <h2>Layout</h2>
+            <div id="canvas">
+                <canvas id="mycanvas" width=""></canvas>
+                <iframe style="height: 371px; width: 561px;" id="iframepdf"></iframe>
+            </div>
+        </div>
+        <div id="rincian">
+            <h2>Rincian</h2>
+            <input id="unduh" type="submit" value="UNDUH & Auto Rename" onclick="unduhPDF()" style="margin:30px">
+            <div id="properti">
+
+                <div id="view">
+                    <h3>NOTE!</h3>
+                    <p>Setelah unduh, kompres dulu file PDFnya. Biar nggak corrupt.</p>
+                    <input id="unduh" type="submit" value="KOMPRES PDF" onclick="compressPDF()"
+                        style="display: inline;">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="js/jilid.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jspdf.debug.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+</body>
