@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalenderin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/yenpop_logo.png" alt="Logo YenPop">
+        <h1>Kalenderin</h1>
+    </div>
+    <div class="content">
+        <div id="menu">
+            <h2>Menu</h2>
+            <a href="index.html">
+                <div id="layoutin">
+                    <img src="img/layotin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="kartuin.html">
+                <div>
+                    <img src="img/kartuin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="#">
+                <div style="background-color: #a74000;">
+                    <img src="img/kalenderin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="jilidin.html">
+                <div>
+                    <img src="img/jilidin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="checkin.html">
+                <div>
+                    <img src="img/checkin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+        </div>
+        <div id="input">
+            <h2>Input</h2>
+            <div>
+                <div>
+                    <h4>Jenis Kalender Duduk :</h4>
+                    <select class="inputan" name='jenis_kartu' id="input_jenis" onchange="jenisKalender()">
+                        <option value=''>--Pilih Jenis Kalender--</option>
+                        <option value='kdh1'>KD Horizontal 1 Bulan</option>
+                        <option value='kdh2'>KD Horizontal 2 Bulan</option>
+                        <option value='kdv1'>KD Vertikal 1 Bulan</option>
+                        <option value='kdv2'>KD Vertikal 2 Bulan</option>
+                    </select>
+                    <h4>Input Gambar (JPEG/PNG) :</h4>
+                    <input onchange="readURL(this)" class="inputan" type="file" id="file-to-upload" accept="image/jpeg, image/png, image/jpg"  multiple />
+                    <div id="dimensi" style="margin-top: 10px; margin-bottom: 10px;">
+                        <h4>Warna Garis Potong :</h4>
+                        <label class="switch">
+                            <input type="checkbox" id="checkgp" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <input class="inputan" type="submit" value="PROSES" onclick="prosesData()">
+                </div>
+            </div>
+        </div>
+        <div id="layout">
+            <h2>Layout</h2>
+            <div id="canvas">
+                <canvas id="mycanvas" width=""></canvas>
+                <iframe style="height: 371px; width: 561px;" id="iframepdf"></iframe>
+            </div>
+        </div>
+        <div id="rincian">
+            <h2>Rincian</h2>
+            <input id="unduh" type="submit" value="UNDUH & Auto Rename" onclick="unduhPDF()" style="margin:30px"> 
+            <div id="properti">
+                
+                <div id="view">
+                    <h3>NOTE!</h3>
+                    <p>Setelah unduh, kompres dulu file PDFnya. Biar nggak corrupt.</p>
+                    <input id="unduh" type="submit" value="KOMPRES PDF" onclick="compressPDF()" style="display: inline;">
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+    <script src="js/calendar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jspdf.debug.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+</body>

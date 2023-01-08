@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layoutin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+<body>
+    <div class="header">
+        <img src="img/yenpop_logo.png" alt="Logo YenPop">
+        <h1>Layoutin</h1>
+    </div>
+    <div class="content">
+        <div id="menu">
+            <h2>Menu</h2>
+            <a href="#">
+                <div id="layoutin" style="background-color: #a74000;">
+                    <img src="img/layotin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="kartuin.html">
+                <div>
+                    <img src="img/kartuin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="kalenderin.html">
+                <div>
+                    <img src="img/kalenderin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            
+            <a href="jilidin.html">
+                <div>
+                    <img src="img/jilidin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+            <a href="checkin.html">
+                <div>
+                    <img src="img/checkin_logo.png" alt="Logo Layout">
+                </div>
+            </a>
+        </div>
+        <div id="input">
+            <h2>Input</h2>
+            <div>
+                <div>
+                    <h4>Jenis Bahan :</h4>
+                    <select class="inputan" name='jenis_kertas' id="input_bahan">
+                        <option value=''>--Pilih Jenis Bahan--</option>
+                        <option value='ac'>Art Carton</option>
+                        <option value='ap'>Art Paper</option>
+                        <option value='sc'>Sticker Chromo</option>
+                        <option value='sv'>Sticek Vinyl</option>
+                    </select>
+                    <h4>Jumlah (Pcs) :</h4>
+                    <input class="inputan" type="number" id="input_pcs">
+                    <h4>Lebar x Tinggi (cm) :</h4>
+                    <div id="dimensi">
+                        <input type="number" placeholder="Lebar" id="input_panjang">
+                        <h4>X</h4>
+                        <input type="number" placeholder="Tinggi" id="input_lebar">
+                    </div>
+                    <h4>Proses Tambahan :</h4>
+                    <div class="cb">
+                        <input type="checkbox" name="potong" value="1" id="input_potong" >
+                        <label for="potong"><span></span>Plus Potong </label>
+                    </div>
+                    <div class="cb">
+                        <input type="checkbox" name="desain" value="1" id="input_desain">
+                        <label for="desain"><span></span>Plus Desain </label>
+                    </div>
+                    <h4>File (JPEG/PNG) :</h4>
+                    <input id="input_gambar" class="inputan" type="file" onchange="readURL(this);" accept="image/jpeg,image/png/image/JPG">
+                    <div id="dimensi" style="margin-top: 5px;">
+                    <h4>Warna Garis Potong :</h4>
+                    <label class="switch">
+                        <input type="checkbox" id="checkgp" checked>
+                        <span class="slider round"></span>
+                    </label></div>
+                    <input class="inputan" type="submit" value="PROSES" onclick="prosesData()">
+                </div>
+            </div>
+        </div>
+        <div id="layout">
+            <h2>Layout</h2>
+            <div id="canvas">
+                <img src="img/preview.png" class="image-preview" id="image-preview" alt="FOTO">
+                <iframe id="iframepdf"></iframe>
+            </div>
+        </div>
+        <div id="rincian">
+            <h2>Rincian</h2>
+            <div id="properti">
+                <div id="teks_prop">
+                    <p>Nama File</p>
+                    <p>Jenis Bahan</p>
+                    <p>Dimensi</p>
+                    <p>Muat di A3</p>
+                    <p>Total Pcs</p>
+                    <p>Total Real Pcs</p>
+                    <p>Total A3</p>
+                    <p>Harga per A3</p>
+                    <p>Biaya Potong</p>
+                    <p>Biaya Desain</p>
+                    <p>Harga Total</p>
+                    
+                </div>
+                <div>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                </div>
+                <div id="view">
+                    <p id="view_name"></p>
+                    <p id="view_bahan"></p>
+                    <p id="view_dimensi"></p>
+                    <p id="view_muatA3"></p>
+                    <p id="view_pcs"></p>
+                    <p id="view_realpcs"></p>
+                    <p id="view_A3"></p>
+                    <p id="view_hargaA3"></p>
+                    <p id="view_potong"></p>
+                    <p id="view_desain"></p>
+                    <p id="view_total"></p>
+                </div>
+                
+            </div>
+            <input style="margin-left: 15px;" id="unduh" type="submit" value="UNDUH & Auto Rename" onclick="unduhPDF()">
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/a3.js"></script>
+    <script type="modul" src="js/jspdf.es.min.js"></script>
+    <script type="modul" src="js/jspdf.es.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+</body>
