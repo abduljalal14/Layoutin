@@ -152,8 +152,10 @@ function tampilHasil() {
 
     if (cost == "cost_agen") {
         cekQtyAgenP();
+        console.log("Agen");
     } else if (cost == "cost_biasa") {
-        cekQtyP();
+        cekQtyAgenP();
+        console.log("Biasa");
     }
 
     textbahan.innerHTML = bahan;
