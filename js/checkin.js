@@ -124,7 +124,6 @@ function tampilHasil() {
     dana = document.getElementById("input_dana").value;
     pcs = document.getElementById("input_pcs").value;
 
-
     let textbahan = document.getElementById("view_bahan");
     let textdana = document.getElementById("view_dana");
     let textpcs = document.getElementById("view_pcs");
@@ -151,54 +150,11 @@ function tampilHasil() {
         default: b = 0; break;
     }
 
-
     if (cost == "cost_agen") {
-        let sqty = dana / (hargaAgen[bahan + '100'] + pcs * b / r)
-
-        if (sqty >= 100) {
-            qty = Math.floor(sqty);
-            hargaA3 = hargaAgen[bahan + '100'];
-        } else if (sqty >= 50 && sqty <= 99) {
-            qty = Math.floor(dana / (hargaAgen[bahan + '50-99'] + pcs * b / r));
-            hargaA3 = hargaAgen[bahan + '50-99'];
-        } else if (sqty >= 3 && sqty <= 49) {
-            qty = Math.floor(dana / (hargaAgen[bahan + '3-49'] + pcs * b / r));
-            hargaA3 = hargaAgen[bahan + '3-49'];
-        } else if (sqty >= 1 && sqty <= 2) {
-            qty = Math.floor(dana / (hargaAgen[bahan + '1-2'] + pcs * b / r));
-            hargaA3 = hargaAgen[bahan + '1-2'];
-        } else {
-            qty = 0;
-            hargaA3 = 0;
-        }
-
-        hitung2(qty);
+        cekQtyAgenP();
     } else if (cost == "cost_biasa") {
-        let sqty = dana / (harga[bahan + '100'] + pcs * b / r)
-
-        if (sqty >= 100) {
-            qty = Math.floor(sqty);
-            hargaA3 = harga[bahan + '100'];
-        } else if (sqty >= 60 && sqty <= 99) {
-            qty = Math.floor(dana / (harga[bahan + '60-59'] + pcs * b / r));
-            hargaA3 = harga[bahan + '60-99'];
-        } else if (sqty >= 20 && sqty <= 69) {
-            qty = Math.floor(dana / (harga[bahan + '20-59'] + pcs * b / r));
-            hargaA3 = harga[bahan + '20-59'];
-        } else if (sqty >= 3 && sqty <= 19) {
-            qty = Math.floor(dana / (harga[bahan + '3-19'] + pcs * b / r));
-            hargaA3 = harga[bahan + '3-19'];
-        } else if (sqty >= 1 && sqty <= 2) {
-            qty = Math.floor(dana / (harga[bahan + '1-2'] + pcs * b / r));
-            hargaA3 = harga[bahan + '1-2'];
-        } else {
-            qty = 0;
-            hargaA3 = 0;
-        }
-        hitung(qty);
+        cekQtyP();
     }
-
-
 
     textbahan.innerHTML = bahan;
     textpcs.innerHTML = pcs + " pcs/A3";
@@ -211,6 +167,54 @@ function tampilHasil() {
     textbpotong.innerHTML = "Rp. " + b * rim;
     textbayar.innerHTML = "Rp. " + bayar;
     textkembalian.innerHTML = "Rp. " + kembalian;
+}
+
+function cekQtyAgenP() {
+    let sqty = dana / (hargaAgen[bahan + '100'] + pcs * b / r)
+
+    if (sqty >= 100) {
+        qty = Math.floor(sqty);
+        hargaA3 = hargaAgen[bahan + '100'];
+    } else if (sqty >= 50 && sqty <= 99) {
+        qty = Math.floor(dana / (hargaAgen[bahan + '50-99'] + pcs * b / r));
+        hargaA3 = hargaAgen[bahan + '50-99'];
+    } else if (sqty >= 3 && sqty <= 49) {
+        qty = Math.floor(dana / (hargaAgen[bahan + '3-49'] + pcs * b / r));
+        hargaA3 = hargaAgen[bahan + '3-49'];
+    } else if (sqty >= 1 && sqty <= 2) {
+        qty = Math.floor(dana / (hargaAgen[bahan + '1-2'] + pcs * b / r));
+        hargaA3 = hargaAgen[bahan + '1-2'];
+    } else {
+        qty = 0;
+        hargaA3 = 0;
+    }
+
+    hitung2(qty);
+}
+
+function cekQtyP() {
+    let sqty = dana / (harga[bahan + '100'] + pcs * b / r)
+
+    if (sqty >= 100) {
+        qty = Math.floor(sqty);
+        hargaA3 = harga[bahan + '100'];
+    } else if (sqty >= 60 && sqty <= 99) {
+        qty = Math.floor(dana / (harga[bahan + '60-59'] + pcs * b / r));
+        hargaA3 = harga[bahan + '60-99'];
+    } else if (sqty >= 20 && sqty <= 69) {
+        qty = Math.floor(dana / (harga[bahan + '20-59'] + pcs * b / r));
+        hargaA3 = harga[bahan + '20-59'];
+    } else if (sqty >= 3 && sqty <= 19) {
+        qty = Math.floor(dana / (harga[bahan + '3-19'] + pcs * b / r));
+        hargaA3 = harga[bahan + '3-19'];
+    } else if (sqty >= 1 && sqty <= 2) {
+        qty = Math.floor(dana / (harga[bahan + '1-2'] + pcs * b / r));
+        hargaA3 = harga[bahan + '1-2'];
+    } else {
+        qty = 0;
+        hargaA3 = 0;
+    }
+    hitung(qty);
 }
 
 function hitung(sqty) {
@@ -266,27 +270,6 @@ function cekHarga2(sqty) {
     } else if (sqty >= 1 && sqty <= 2) {
         hargaA3 = hargaAgen[bahan + '1-2'];
     } else {
-        hargaA3 = 0;
-    }
-}
-
-function coba(params) {
-    let sqty = dana / (hargaAgen[bahan + '100'] + pcs * b / r)
-
-    if (sqty >= 100) {
-        qty = Math.floor(sqty);
-        hargaA3 = hargaAgen[bahan + '100'];
-    } else if (sqty >= 50 && sqty <= 99) {
-        qty = Math.floor(dana / (hargaAgen[bahan + '50-99'] + pcs * b / r));
-        hargaA3 = hargaAgen[bahan + '50-99'];
-    } else if (sqty >= 3 && sqty <= 49) {
-        qty = Math.floor(dana / (hargaAgen[bahan + '3-49'] + pcs * b / r));
-        hargaA3 = hargaAgen[bahan + '3-49'];
-    } else if (sqty >= 1 && sqty <= 2) {
-        qty = Math.floor(dana / (hargaAgen[bahan + '1-2'] + pcs * b / r));
-        hargaA3 = hargaAgen[bahan + '1-2'];
-    } else {
-        qty = 0;
         hargaA3 = 0;
     }
 }
