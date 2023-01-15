@@ -154,7 +154,7 @@ function tampilHasil() {
         cekQtyAgenP();
         console.log("Agen");
     } else if (cost == "cost_biasa") {
-        cekQtyAgenP();
+        cekQtyP();
         console.log("Biasa");
     }
 
@@ -241,7 +241,7 @@ function hitung2(sqty) {
 
     if (dana < bayar) {
         qty = sqty - 1;
-        hitung(qty);
+        hitung2(qty);
     }
 }
 
