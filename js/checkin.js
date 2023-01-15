@@ -122,7 +122,7 @@ function tampilHasil() {
     bahan = document.getElementById("input_bahan").value;
     cost = document.getElementById("input_cost").value;
     dana = document.getElementById("input_dana").value;
-    pcs = document.getElementById("input_pcs").value;
+    pcs = Number(document.getElementById("input_pcs").value);
 
     let textbahan = document.getElementById("view_bahan");
     let textdana = document.getElementById("view_dana");
