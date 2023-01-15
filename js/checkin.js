@@ -229,6 +229,12 @@ function hitung(sqty) {
     if (dana < bayar) {
         qty = sqty - 1;
         hitung(qty);
+    } else {
+        cekHarga(qty);
+        total = hargaA3 * qty;
+        rim = Math.ceil(qty * pcs / r);
+        bayar = total + rim * b;
+        kembalian = dana - bayar;
     }
 }
 
