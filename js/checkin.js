@@ -195,7 +195,7 @@ function tampilHasil() {
         }
 
         hitung2(qty);
-    } else {
+    } else if (cost == "cost_biasa") {
         let sqty = dana / (harga[bahan + '100'] + pcs * b / r)
 
         if (sqty >= 100) {
