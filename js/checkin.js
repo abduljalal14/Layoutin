@@ -227,6 +227,7 @@ function hitung(sqty) {
     let bagi = sbayar / 100;
     let bulat = Math.ceil(bagi);
     bayar = bulat * 100;
+    console.log(typeof (bayar));
 
 
     if (dana < bayar) {
