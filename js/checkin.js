@@ -223,15 +223,15 @@ function hitung(sqty) {
     cekHarga(sqty);
     total = hargaA3 * sqty;
     rim = Math.ceil(sqty * pcs / r);
-    bayar = total + rim * b;
+    let sbayar = total + rim * b;
+    let bagi = sbayar / 100;
+    let bulat = Math.ceil(bagi);
+    bayar = bulat * 100;
+
 
     if (dana < bayar) {
         qty = sqty - 1;
         hitung(qty);
-    } else {
-        total = hargaA3 * qty;
-        rim = Math.ceil(qty * pcs / r);
-        bayar = total + rim * b;
     }
     kembalian = dana - bayar;
 }
