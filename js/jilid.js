@@ -30,7 +30,7 @@ let pad = {
 let x, y;
 let paper = document.getElementById("iframepdf");
 function jenisJilid() {
-    jenis_jilid = document.getElementById("input_jenis").value;
+    let jenis_jilid = document.getElementById("input_jenis").value;
     imageArray.length = 0;
     docs.length = 0;
     switch (jenis_jilid) {
