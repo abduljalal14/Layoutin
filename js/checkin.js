@@ -230,6 +230,7 @@ function hitung(sqty) {
     bayar = Number(bulat * 100);
     console.log(typeof (bayar));
     console.log(bayar);
+    console.log(harga);
 
 
     if (dana < bayar) {
