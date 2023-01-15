@@ -226,8 +226,9 @@ function hitung(sqty) {
     let sbayar = total + rim * b;
     let bagi = sbayar / 100;
     let bulat = Math.ceil(bagi);
-    bayar = parseInt(bulat * 100);
+    bayar = Number(bulat * 100);
     console.log(typeof (bayar));
+    console.log(bayar);
 
 
     if (dana < bayar) {
