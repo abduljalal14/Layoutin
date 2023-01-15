@@ -226,6 +226,7 @@ function hitung(sqty) {
     let sbayar = total + rim * b;
     let bagi = sbayar / 100;
     let bulat = Math.ceil(bagi);
+    console.log(pcs);
     bayar = Number(bulat * 100);
     console.log(typeof (bayar));
     console.log(bayar);
