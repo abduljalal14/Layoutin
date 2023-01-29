@@ -1,5 +1,5 @@
 # Layoutin
- Ini adalah Program aplikasi untuk melakukan otomatisasai dalam mengolah grafis percetakan.
+ Ini adalah Program aplikasi untuk melakukan otomatisasi dalam mengolah grafis percetakan.
  Program ini saya buat khusus untuk perusahaan tempat saya bekerja yaitu Yenpop Digital Printing.
  
  Berikut adalah beberapa fitur dari program yang saya buat:
